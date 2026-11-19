@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Token Radar · launch watch</title>
+    <link rel="stylesheet" href="app.css">
+  </head>
+  <body>
+    <header>
+      <div class="brand">
+        <span class="pulse"></span>
+        <div>
+          <small>FIELD NOTE / 14 NOV 2026</small>
+          <h1>Token <em>Radar</em></h1>
+        </div>
+      </div>
+      <div class="status">
+        <b id="count">—</b>
+        <span>pre-token protocols<br>ranked by implied value</span>
+      </div>
+    </header>
+    <main>
+      <section class="intro">
+        <div>
+          <p class="eyebrow">SIGNAL BOARD <span>·</span> DEFI</p>
+          <h2>Find the next<br><em>surface area.</em></h2>
+          <p class="lede">A data-led watchlist of sizeable protocols with no recorded token. The model ranks estimated value; it does not predict a launch.</p>
+        </div>
+        <aside>
+          <h3>How the value is worked out</h3>
+          <p>Implied value = 8% of TVL × 7d-growth factor × token-less tenure factor × chain breadth × category-only launch-plausibility factor. Growth is capped at ±50%; tenure uses listed_at through the snapshot date. CEX and bridge categories get ×0.003; liquid staking and restaked BTC get ×0.02, because these are not farmable pre-token launches. Liquid restaking gets ×0.55; farmable DeFi categories receive ×1.05.</p>
+          <p class="snapshot">WHAT THIS SNAPSHOT IS<br>DefiLlama protocol data · 2026-11-14<br>758 protocols · 40 watchlist entries</p>
+        </aside>
+      </section>
+      <section id="board">
+        <div class="tools">
+          <input id="search" type="search" placeholder="Search names, slugs, chains…" aria-label="Search protocols">
+          <select id="category"><option value="">All categories</option></select>
+          <select id="chain"><option value="">All chains</option></select>
+          <label class="toggle"><input id="watch" type="checkbox"> Watchlist only</label>
+          <span id="shown"></span>
+        </div>
+        <div class="tablewrap">
+          <table>
+            <thead>
+              <tr>
+                <th data-key="rank">#</th>
+                <th data-key="name">Protocol</th>
+                <th data-key="category">Category</th>
+                <th>Chains</th>
+                <th data-key="tvl_usd">TVL</th>
+                <th data-key="change_7d">7d</th>
+                <th data-key="age_days">Age</th>
+                <th data-key="implied_value_usd">Implied value</th>
+                <th>Confidence / notes</th>
+              </tr>
+            </thead>
+            <tbody id="rows"></tbody>
+          </table>
+        </div>
+        <p class="foot">Age is measured from DefiLlama’s first tracking date. Activity and farm plans are research guidance; this snapshot contains no reward or airdrop signal.</p>
+      </section>
+      <section id="detail" hidden></section>
+    </main>
+    <footer>RADAR MODEL / SNAPSHOT-BOUND · NO TOKEN LAUNCH CLAIMS</footer>
+    <script src="app.js"></script>
+  </body>
+</html>
